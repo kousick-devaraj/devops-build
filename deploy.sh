@@ -6,5 +6,5 @@ if [ -z "$IMAGE_NAME" ]; then
 fi
 echo "Deploying Docker image: $IMAGE_NAME..."
 export DOCKER_IMAGE=$IMAGE_NAME
-docker-compose down
-docker-compose up -d
+docker compose down
+docker compose up -d
