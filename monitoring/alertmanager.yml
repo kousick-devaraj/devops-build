@@ -1,0 +1,21 @@
+global:
+  # Gmail SMTP server configuration
+  smtp_smarthost: 'smtp.gmail.com:587'
+  smtp_from: 'kousickd@gmail.com'
+  smtp_auth_username: 'kousickd@gmail.com'
+  smtp_auth_password: 'gdethfforfcichuh'
+  smtp_require_tls: true
+
+route:
+  # Group alerts by their name to prevent email spam
+  group_by: ['e-commerce-app alert']
+  group_wait: 10s
+  group_interval: 1m
+  repeat_interval: 1h
+  receiver: 'email-notifications'
+
+receivers:
+  - name: 'email-notifications'
+    email_configs:
+      - to: 'kousick2smart@gmail.com'
+        send_resolved: true
